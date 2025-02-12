@@ -6,6 +6,7 @@ import { User } from '../entities/user.entity';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { JwtStrategy } from './jwt.strategy';
+import { BarcodeModule } from '../barcode/barcode.module';
 
 
 @Module({
@@ -13,9 +14,10 @@ import { JwtStrategy } from './jwt.strategy';
     TypeOrmModule.forFeature([User]),
     PassportModule.register({ defaultStrategy: 'jwt' }),
     JwtModule.register({
-      secret: process.env.JWT_SECRET || process.env.JWT_SECRET,
+      secret: process.env.JWT_SECRET || 'process.env.JWT_SECRET',
       signOptions: { expiresIn: '1h' },
     }),
+    BarcodeModule,
   ],
   controllers: [AuthController],
   providers: [AuthService, JwtStrategy],

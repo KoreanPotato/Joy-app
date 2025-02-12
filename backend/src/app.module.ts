@@ -5,6 +5,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserModule } from './user/user.module';
 import { ConfigModule } from '@nestjs/config';
 import { AuthModule } from './auth/auth.module';
+import { BarcodeService } from './barcode/barcode.service';
+import { BarcodeController } from './barcode/barcode.controller';
+import { BarcodeModule } from './barcode/barcode.module';
 
 console.log('JWT_SECRET:', process.env.JWT_SECRET);
 console.log('Working Directory:', process.cwd());
@@ -31,8 +34,9 @@ console.log('JWT_SECRET:', process.env.JWT_SECRET);
     }),
     UserModule,
     AuthModule,
+    BarcodeModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, BarcodeController],
+  providers: [AppService, BarcodeService],
 })
 export class AppModule {}
