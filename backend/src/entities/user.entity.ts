@@ -1,11 +1,11 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
-import { IsEmail, IsNotEmpty, IsISO8601, MinLength, IsAlpha } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsISO8601, MinLength } from 'class-validator';
 
 
 @Entity() 
 export class User {
   @PrimaryGeneratedColumn()
-  id: number;
+  id: string;
 
   @Column({ unique: true, nullable: false })
   @IsEmail()
@@ -25,7 +25,7 @@ export class User {
   role: string;
 
   @Column({ default: 100 })
-  points: number
+  balance: number
 
   @Column({ unique: true }) 
   barcode: string;

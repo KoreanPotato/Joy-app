@@ -20,7 +20,7 @@ export default function HomeScreen() {
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">женя лох: Try it</ThemedText>
+        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
         <ThemedText>
           Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
           Press{' '}
@@ -35,9 +35,9 @@ export default function HomeScreen() {
         </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 5454545: Explore</ThemedText>
+        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
         <ThemedText>
-          333333Tap the fkldjflajflkdsjflkdsajfролрролролдролдролрлодa;lkj tab to learn more about what's included in this starter app.
+          Tap the Explore tab to learn more about what's included in this starter app.
         </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>

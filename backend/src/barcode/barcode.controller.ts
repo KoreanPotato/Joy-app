@@ -11,7 +11,7 @@ export class BarcodeController {
     ) {}
 
     @Get(':id')
-    async getBarcode(@Param('id') id: number, @Res() res: Response) {
+    async getBarcode(@Param('id') id: string, @Res() res: Response) {
         const user = await this.userService.getUserById(id);
         if (!user) {
             throw new NotFoundException('User not found');

@@ -9,7 +9,7 @@ import { BarcodeService } from 'src/barcode/barcode.service';
 
 @Injectable()
 export class AuthService {
-  constructor(
+  constructor (
     @InjectRepository(User)
     private userRepository: Repository<User>,
     private jwtService: JwtService,

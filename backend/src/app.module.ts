@@ -8,12 +8,11 @@ import { AuthModule } from './auth/auth.module';
 import { BarcodeService } from './barcode/barcode.service';
 import { BarcodeController } from './barcode/barcode.controller';
 import { BarcodeModule } from './barcode/barcode.module';
-
-console.log('JWT_SECRET:', process.env.JWT_SECRET);
-console.log('Working Directory:', process.cwd());
-console.log('DB Config:', process.env.DB_USER, process.env.DB_PASS, process.env.DB_NAME);
-console.log('JWT_SECRET:', process.env.JWT_SECRET);
-
+import { LoyaltyService } from './loyalty/loyalty.service';
+import { LoyaltyModule } from './loyalty/loyalty.module';
+import { LoyaltyController } from './loyalty/loyalty.controller';
+import { UserController } from './user/user.controller';
+import { UserService } from './user/user.service';
 
 
 @Module({
@@ -35,8 +34,9 @@ console.log('JWT_SECRET:', process.env.JWT_SECRET);
     UserModule,
     AuthModule,
     BarcodeModule,
+    LoyaltyModule,
   ],
-  controllers: [AppController, BarcodeController],
-  providers: [AppService, BarcodeService],
+  controllers: [AppController, BarcodeController, LoyaltyController, UserController],
+  providers: [AppService, BarcodeService, LoyaltyService, UserService],
 })
 export class AppModule {}

@@ -7,7 +7,7 @@ export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @Get(':id')
-  async getUserById(@Param('id', ParseIntPipe) id: number): Promise<User> {
+  async getUserById(@Param('id', ParseIntPipe) id: string): Promise<User> {
     try {
       return await this.userService.getUserById(id);
     } catch (error) {
